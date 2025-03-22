@@ -22,7 +22,7 @@ for input_filename in file_list:
     # Define regex pattern to extract data
     pattern = re.compile(r":(\d+)@Ca.*?RMSD between 1 atom pairs is ([\d.]+)")
 
-    # Dictionary to store RMSD values for each atom number
+    # Dictionary to store RMSD values for each residue number
     rmsd_data = defaultdict(list)
 
     # Check if "</style>" was found
@@ -35,7 +35,7 @@ for input_filename in file_list:
                 rmsd_value = float(match.group(2))  # Convert to float
                 rmsd_data[atom_number].append(rmsd_value)
 
-        # Sort atom numbers
+        # Sort residue numbers
         atom_numbers = sorted(rmsd_data.keys())
         
         # Write extracted data to a CSV file (stacking values in the same row)
@@ -44,7 +44,7 @@ for input_filename in file_list:
             
             # Write header row
             max_replicates = max(len(values) for values in rmsd_data.values())
-            header = ["Atom Number"] + [f"RMSD {i+1}" for i in range(max_replicates)]
+            header = ["Residue Number"] + [f"RMSD {i+1}" for i in range(max_replicates)]
             writer.writerow(header)
             
             # Write data rows
