@@ -6,8 +6,7 @@ import os
 from collections import defaultdict
 
 # Get all files ending in "_InterDistances.txt"
-file_list = [f for f in os.listdir() if f.endswith("_InterDistances.txt")]
-
+file_list = [f for f in os.listdir() if f.endswith("_InterDistances.txt") or f.endswith("_IntraDistances.txt")]
 for input_filename in file_list:
     # Generate output file name by replacing .txt with .csv
     output_filename = input_filename.replace(".txt", ".csv")
