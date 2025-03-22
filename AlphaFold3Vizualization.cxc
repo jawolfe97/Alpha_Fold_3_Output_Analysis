@@ -1,0 +1,12 @@
+###ChimeraX Command Line###;
+~select; select; color grey;~select; 
+select @Ca@@bfactor<100 ; 
+color sel dark blue;~select; 
+select @Ca@@bfactor<90 ; 
+color sel light blue;~select; 
+select @Ca@@bfactor<70 ; 
+color sel yellow;~select; 
+select @Ca@@bfactor<50 ; 
+color sel orange;~select;
+color byhetero;
+preset "overall look" "publication 1 (silhouettes)" ;
